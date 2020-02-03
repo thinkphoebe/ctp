@@ -3,6 +3,7 @@ package goctp
 
 import (
 	_ "github.com/thinkphoebe/ctp/api/6.3.15_linux64" // for go mod vendor
+	_ "github.com/thinkphoebe/ctp/api/6.3.16_linux64" // for go mod vendor
 )
 
 /*
