@@ -128,29 +128,30 @@ public:
 	///@param pSpi 派生自回调接口类的实例
 	virtual void RegisterSpi(CThostFtdcMdSpi *pSpi) = 0;
 	
+    // ysn 以下四处 char *ppInstrumentID[] 由于golang无法转换成goslice改成了 char **ppInstrumentID
 	///订阅行情。
 	///@param ppInstrumentID 合约ID  
 	///@param nCount 要订阅/退订行情的合约个数
 	///@remark 
-	virtual int SubscribeMarketData(char *ppInstrumentID[], int nCount) = 0;
+	virtual int SubscribeMarketData(char **ppInstrumentID, int nCount) = 0;
 
 	///退订行情。
 	///@param ppInstrumentID 合约ID  
 	///@param nCount 要订阅/退订行情的合约个数
 	///@remark 
-	virtual int UnSubscribeMarketData(char *ppInstrumentID[], int nCount) = 0;
+	virtual int UnSubscribeMarketData(char **ppInstrumentID, int nCount) = 0;
 	
 	///订阅询价。
 	///@param ppInstrumentID 合约ID  
 	///@param nCount 要订阅/退订行情的合约个数
 	///@remark 
-	virtual int SubscribeForQuoteRsp(char *ppInstrumentID[], int nCount) = 0;
+	virtual int SubscribeForQuoteRsp(char **ppInstrumentID, int nCount) = 0;
 
 	///退订询价。
 	///@param ppInstrumentID 合约ID  
 	///@param nCount 要订阅/退订行情的合约个数
 	///@remark 
-	virtual int UnSubscribeForQuoteRsp(char *ppInstrumentID[], int nCount) = 0;
+	virtual int UnSubscribeForQuoteRsp(char **ppInstrumentID, int nCount) = 0;
 
 	///用户登录请求
 	virtual int ReqUserLogin(CThostFtdcReqUserLoginField *pReqUserLoginField, int nRequestID) = 0;
