@@ -4,9 +4,9 @@
   //printf("Initialization goctp done.\n");
 %}
 
-%typemap(gotype) (char **ppInstrumentID, int nCount) "[]string"
+%typemap(gotype) (char *ppInstrumentID[], int nCount) "[]string"
 
-%typemap(in) (char **ppInstrumentID, int nCount)
+%typemap(in) (char *ppInstrumentID[], int nCount)
 %{
   {
     int i;
@@ -33,9 +33,9 @@
   }
 %}
 
-%typemap(argout) (char **ppInstrumentID, int nCount) "" /* override char *[] default */
+%typemap(argout) (char *ppInstrumentID[], int nCount) "" /* override char *[] default */
 
-%typemap(freearg) (char **ppInstrumentID, int nCount)
+%typemap(freearg) (char *ppInstrumentID[], int nCount)
 %{
   {
     int i;
