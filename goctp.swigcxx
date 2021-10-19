@@ -48,10 +48,10 @@
 
 /* Includes the header files in the wrapper code */
 %header %{
-#include "api/6.3.15_linux64/ThostFtdcUserApiDataType.h" 
-#include "api/6.3.15_linux64/ThostFtdcUserApiStruct.h"
-#include "api/6.3.15_linux64/ThostFtdcMdApi.h"
-#include "api/6.3.15_linux64/ThostFtdcTraderApi.h"
+#include "api/6.3.19_P1_linux64/ThostFtdcUserApiDataType.h" 
+#include "api/6.3.19_P1_linux64/ThostFtdcUserApiStruct.h"
+#include "api/6.3.19_P1_linux64/ThostFtdcMdApi.h"
+#include "api/6.3.19_P1_linux64/ThostFtdcTraderApi.h"
 %}
 
 /* Parse the header files to generate wrappers */
@@ -60,7 +60,7 @@
 %feature("director") CThostFtdcMdSpi;
 %feature("director") CThostFtdcTraderSpi;
 
-%include "api/6.3.15_linux64/ThostFtdcUserApiDataType.h" 
-%include "api/6.3.15_linux64/ThostFtdcUserApiStruct.h"
-%include "api/6.3.15_linux64/ThostFtdcMdApi.h"
-%include "api/6.3.15_linux64/ThostFtdcTraderApi.h"
+%include "api/6.3.19_P1_linux64/ThostFtdcUserApiDataType.h" 
+%include "api/6.3.19_P1_linux64/ThostFtdcUserApiStruct.h"
+%include "api/6.3.19_P1_linux64/ThostFtdcMdApi.h"
+%include "api/6.3.19_P1_linux64/ThostFtdcTraderApi.h"

@@ -19,17 +19,17 @@ optional = {}
 if platform.system() == 'Linux':
     optional['extra_compile_args'] = ['-std=c++11']
     optional['runtime_library_dirs'] = ['./']
-    optional['include_dirs']=['./api/6.3.15_linux64']
-    optional['library_dirs']=['./api/6.3.15_linux64']
-    depend_dynamics = ['api/6.3.15_linux64/libthostmduserapi_se.so', 'api/6.3.15_linux64/libthosttraderapi_se.so']
+    optional['include_dirs']=['./api/6.3.19_P1_linux64']
+    optional['library_dirs']=['./api/6.3.19_P1_linux64']
+    depend_dynamics = ['api/6.3.19_P1_linux64/libthostmduserapi_se.so', 'api/6.3.19_P1_linux64/libthosttraderapi_se.so']
 if platform.system() == 'Windows':
-    optional['include_dirs'] = ['./api/6.3.15_win32']
-    optional['library_dirs'] = ['./api/6.3.15_win32']
-    depend_dynamics = ['api/6.3.15_win32/thostmduserapi_se.dll', 'api/6.3.15_win32/thosttraderapi_se.dll']
+    optional['include_dirs'] = ['./api/6.3.19_P1_win32']
+    optional['library_dirs'] = ['./api/6.3.19_P1_win32']
+    depend_dynamics = ['api/6.3.19_P1_win32/thostmduserapi_se.dll', 'api/6.3.19_P1_win32/thosttraderapi_se.dll']
     if '64 bit' in platform.python_compiler():
-        optional['include_dirs'] = ['./api/6.3.15_win64']
-        optional['library_dirs'] = ['./api/6.3.15_win64']
-        depend_dynamics = ['api/6.3.15_win64/thostmduserapi_se.dll', 'api/6.3.15_win64/thosttraderapi_se.dll']
+        optional['include_dirs'] = ['./api/6.3.19_P1_win64']
+        optional['library_dirs'] = ['./api/6.3.19_P1_win64']
+        depend_dynamics = ['api/6.3.19_P1_win64/thostmduserapi_se.dll', 'api/6.3.19_P1_win64/thosttraderapi_se.dll']
 argments = dict(name='PyCTP',
                 sources=sources,
                 language='c++',
@@ -40,7 +40,7 @@ argments.update(optional)
 setup(name='PyCTP',
         version='1.0.1',
         description='CTP for Python',
-        long_description='CTP v6.3.15 for Python',
+        long_description='CTP 6.3.19_P1 for Python',
         author='Shi Zhuolin',
         author_email='shizhuolin@hotmail.com',
         url='http://www.pyctp.org/',
