@@ -21,6 +21,13 @@ fn main() {
     println!("cargo:rerun-if-changed=src/ctp_td.cpp");
     println!("cargo:rerun-if-changed=src/ctp_md.cpp");
 
+    cc::Build::new()
+            .cpp(true)
+            .file("src/wrapper.cpp")
+            .flag_if_supported("-std=c++17")
+            .flag_if_supported("-w")
+            .compile("wrapper");
+
     // ctp api header is clean enough, we will use blacklist instead whitelist
     let bindings = bindgen::Builder::default()
             .header("src/wrapper.cpp")
