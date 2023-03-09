@@ -32,6 +32,7 @@ fn main() {
     let bindings = bindgen::Builder::default()
             .header("src/wrapper.cpp")
             .derive_debug(true)
+            .derive_default(true)
             // make output smaller
             .layout_tests(false)
             .generate_comments(false)
